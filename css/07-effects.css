@@ -1,0 +1,181 @@
+/*============================================================
+
+    Project Bloom
+    File: 07-effects.css
+
+    Purpose
+    -------
+    Global visual effects.
+
+    Responsibilities
+    ----------------
+    ✓ Soft glow
+    ✓ Cinematic overlays
+    ✓ Blur helpers
+    ✓ Glow helpers
+    ✓ Future bouquet lighting
+
+    This file DOES NOT contain:
+    ✗ Animations
+    ✗ Layout
+    ✗ Typography
+
+=============================================================*/
+
+
+/*============================================================
+    Soft Glow Layer
+
+    A gentle centre glow that subtly guides the eye.
+=============================================================*/
+
+#lighting{
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 50% 38%,
+
+            rgba(255,245,220,.08) 0%,
+
+            rgba(255,245,220,.04) 28%,
+
+            rgba(255,245,220,.015) 52%,
+
+            transparent 72%
+
+        );
+
+    opacity:.45;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Soft Blur Helpers
+
+=============================================================*/
+
+.blur-soft{
+
+    filter:blur(2px);
+
+}
+
+.blur-medium{
+
+    filter:blur(6px);
+
+}
+
+.blur-heavy{
+
+    filter:blur(12px);
+
+}
+
+
+/*============================================================
+    Glow Helpers
+
+=============================================================*/
+
+.glow-soft{
+
+    box-shadow:
+
+        0 0 8px rgba(255,255,255,.18),
+
+        0 0 16px rgba(255,255,255,.08);
+
+}
+
+.glow-medium{
+
+    box-shadow:
+
+        0 0 15px rgba(255,255,255,.22),
+
+        0 0 35px rgba(255,255,255,.12);
+
+}
+
+.glow-strong{
+
+    box-shadow:
+
+        0 0 20px rgba(255,255,255,.30),
+
+        0 0 50px rgba(255,255,255,.18);
+
+}
+
+
+/*============================================================
+    Bouquet Glow
+
+    Hidden until flowers bloom.
+=============================================================*/
+
+#bouquet{
+
+    filter:
+
+        drop-shadow(0 0 0 rgba(255,255,255,0));
+
+}
+
+
+/*============================================================
+    Firefly Glow
+
+=============================================================*/
+
+#firefly{
+
+    filter:
+
+        drop-shadow(0 0 6px rgba(255,239,160,.65))
+
+        drop-shadow(0 0 14px rgba(255,239,160,.35));
+
+}
+
+
+/*============================================================
+    Cinematic Image Rendering
+
+=============================================================*/
+
+svg{
+
+    shape-rendering:geometricPrecision;
+
+}
+
+canvas{
+
+    image-rendering:auto;
+
+}
+
+
+/*============================================================
+    Future Utility Classes
+
+=============================================================*/
+
+.hidden-opacity{
+
+    opacity:0;
+
+}
+
+.visible-opacity{
+
+    opacity:1;
+
+}

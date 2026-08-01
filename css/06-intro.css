@@ -1,0 +1,200 @@
+/*============================================================
+
+    Project Bloom
+    File: 06-intro.css
+
+    Purpose
+    -------
+    Styles the opening message.
+
+    Responsibilities
+    ----------------
+    ✓ Intro positioning
+    ✓ Typography
+    ✓ Intro sparkle
+    ✓ Readability
+
+    This file DOES NOT contain:
+    ✗ Animation keyframes
+    ✗ Timing
+    ✗ JavaScript logic
+
+=============================================================*/
+
+
+/*============================================================
+    Intro Container
+
+    Positioned slightly above the centre.
+
+    This leaves visual room for the bouquet
+    to bloom later.
+=============================================================*/
+
+#intro{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding-top:38vh;
+    
+    text-align:center;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Intro Text
+
+=============================================================*/
+
+#intro-text{
+
+    max-width:850px;
+
+    width:min(90%,850px);
+
+    margin:0 auto;
+
+    font-family:var(--font-title);
+
+    font-size:clamp(2.3rem,4vw,4.3rem);
+
+    font-weight:400;
+
+    line-height:1.2;
+
+    letter-spacing:.02em;
+
+    color:rgba(245,241,232,.94);
+
+    text-wrap:balance;
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    user-select:none;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.04);
+
+}
+
+
+/*============================================================
+    Intro Sparkle
+
+    Initially invisible.
+
+    JavaScript controls:
+
+    • Appearance
+    • Glow
+    • Rotation
+    • Removal
+
+=============================================================*/
+
+#intro-sparkle{
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:32px;
+
+    opacity:0;
+
+    position:relative;
+
+}
+
+
+/* Vertical ray */
+
+#intro-sparkle::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:2px;
+
+    height:100%;
+
+    border-radius:999px;
+
+    transform:translate(-50%,-50%);
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.95),
+
+        transparent
+
+    );
+
+}
+
+
+/* Horizontal ray */
+
+#intro-sparkle::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+
+    height:2px;
+
+    border-radius:999px;
+
+    transform:translate(-50%,-50%);
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.95),
+
+        transparent
+
+    );
+
+}
+
+
+/*============================================================
+    Selection
+
+=============================================================*/
+
+#intro-text::selection{
+
+    background:transparent;
+
+}

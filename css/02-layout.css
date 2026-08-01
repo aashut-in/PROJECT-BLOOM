@@ -1,0 +1,299 @@
+/*============================================================
+
+    Project Bloom
+    File: 02-layout.css
+
+    Purpose
+    -------
+    Defines the structural layout of the entire experience.
+
+    Responsibilities
+    ----------------
+    ✓ Root experience container
+    ✓ Layer positioning
+    ✓ Z-index hierarchy
+    ✓ Fullscreen sections
+    ✓ Future-proof positioning
+
+    This file DOES NOT contain:
+    ✗ Colours
+    ✗ Animations
+    ✗ Typography
+    ✗ Effects
+
+=============================================================*/
+
+
+/*============================================================
+    Root Experience
+
+    Everything lives inside this container.
+
+    If we ever want to fade the entire experience,
+    replay it, or transition between scenes,
+    we only animate this container.
+=============================================================*/
+
+#experience{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+/*============================================================
+    Sky Layer
+
+    Contains:
+    • Stars
+    • Particles
+=============================================================*/
+
+#sky{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-sky);
+
+    overflow:hidden;
+
+}
+
+
+/*============================================================
+    Star Layers
+
+    Three independent layers allow us to create
+    depth and subtle parallax later.
+
+    Near stars move slightly more.
+    Far stars move very little.
+=============================================================*/
+
+#stars-far,
+#stars-mid,
+#stars-near{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+#stars-far{
+
+    z-index:1;
+
+}
+
+#stars-mid{
+
+    z-index:2;
+
+}
+
+#stars-near{
+
+    z-index:3;
+
+}
+
+
+/*============================================================
+    Atmosphere
+
+    Floating particles live here.
+
+    Future additions:
+    • Pollen
+    • Dust
+    • Petals
+    • Rain
+    • Snow
+=============================================================*/
+
+#atmosphere{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-particles);
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+
+/*============================================================
+    Cinematic Overlay
+
+    Holds visual overlays such as:
+
+    • Vignette
+    • Gradient
+    • Seasonal lighting
+
+=============================================================*/
+
+#overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-overlay);
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Intro Scene
+
+    Starts centred.
+
+    Later fades away once
+    the bouquet begins growing.
+=============================================================*/
+
+#intro{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-intro);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Bouquet Scene
+
+    Initially empty.
+
+    JavaScript creates every stem,
+    flower and ribbon here.
+=============================================================*/
+
+#bouquet{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-bouquet);
+
+    overflow:visible;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Firefly
+
+    Single absolutely-positioned element.
+
+    JS controls its movement.
+=============================================================*/
+
+#firefly{
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    z-index:var(--z-firefly);
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Hidden Letter
+
+    Initially invisible.
+
+    Revealed near the end.
+=============================================================*/
+
+#letter{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:var(--z-letter);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Utility Class
+
+    Used by JavaScript to completely hide
+    an element without removing it
+    from the DOM.
+=============================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/*============================================================
+    Utility Class
+
+    Makes any element fill its parent.
+=============================================================*/
+
+.full-size{
+
+    position:absolute;
+
+    inset:0;
+
+}

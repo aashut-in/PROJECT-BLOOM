@@ -1,0 +1,179 @@
+/*============================================================
+
+    Project Bloom
+    File: 03-sky.css
+
+    Purpose
+    -------
+    Creates the atmosphere of the night.
+
+    Responsibilities
+    ----------------
+    ✓ Sky background
+    ✓ Vignette
+    ✓ Soft gradients
+    ✓ Lighting layer
+    ✓ Layer blending
+
+    This file DOES NOT contain:
+    ✗ Stars
+    ✗ Particles
+    ✗ Animations
+    ✗ Typography
+
+=============================================================*/
+
+
+/*============================================================
+    Sky Background
+=============================================================*/
+
+#sky{
+
+    background:
+        radial-gradient(
+            ellipse at 50% 38%,
+            #11111A 0%,
+            #0C0C14 35%,
+            #09090F 70%,
+            #06060A 100%
+        );
+
+}
+
+
+/*============================================================
+    Cinematic Overlay
+=============================================================*/
+
+#overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Soft Center Gradient
+
+    The middle of the screen is ever so slightly brighter.
+
+    This guides the viewer's eyes naturally toward
+    the bouquet without making it obvious.
+=============================================================*/
+
+.gradient{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 50% 38%,
+
+            rgba(255,255,255,.035),
+
+            rgba(255,255,255,.015) 35%,
+
+            transparent 75%
+
+        );
+
+}
+
+
+/*============================================================
+    Vignette
+
+    Darkens the edges of the screen.
+
+    Gives the scene a cinematic feel.
+=============================================================*/
+
+.vignette{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 50% 38%,
+
+            transparent 50%,
+
+            rgba(0,0,0,.20) 72%,
+
+            rgba(0,0,0,.55) 100%
+
+        );
+
+}
+
+
+/*============================================================
+    Lighting Layer
+
+    Reserved for dynamic lighting.
+
+    Initially invisible.
+
+    Future uses:
+
+    • Bouquet glow
+    • Firefly glow
+    • Morning warmth
+    • Rain flashes
+=============================================================*/
+
+#lighting{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/*============================================================
+    Blend Modes
+
+    Keeps every overlay soft.
+=============================================================*/
+
+.gradient{
+
+    mix-blend-mode:screen;
+
+}
+
+.vignette{
+
+    mix-blend-mode:multiply;
+
+}
+
+
+/*============================================================
+    Prevent Image Selection
+=============================================================*/
+
+#sky,
+#overlay{
+
+    user-select:none;
+
+}

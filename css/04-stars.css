@@ -1,0 +1,312 @@
+/*============================================================
+
+    Project Bloom
+    File: 04-stars.css
+
+    Purpose
+    -------
+    Defines the appearance of every star.
+
+    Responsibilities
+    ----------------
+    ✓ Star appearance
+    ✓ Different star sizes
+    ✓ Layer depth styling
+    ✓ Sparkle rays
+    ✓ Performance optimisation
+
+    This file DOES NOT contain:
+    ✗ Star generation
+    ✗ Random positions
+    ✗ Sparkle timing
+    ✗ Animations
+
+=============================================================*/
+
+
+/*============================================================
+    Base Star
+
+    Every generated star receives this class.
+=============================================================*/
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform-origin:center;
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+
+}
+
+
+/*============================================================
+    Star Depth
+
+    Three layers create depth.
+
+    Far stars:
+    Smaller
+    Dimmer
+
+    Near stars:
+    Larger
+    Brighter
+
+=============================================================*/
+
+.star-far{
+
+    opacity:.28;
+
+    filter:blur(.2px);
+
+}
+
+.star-mid{
+
+    opacity:.55;
+
+}
+
+.star-near{
+
+    opacity:.85;
+
+}
+
+
+/*============================================================
+    Star Colours
+
+    JS randomly assigns one of these classes.
+=============================================================*/
+
+.star-warm{
+
+    background:var(--color-star-warm);
+
+}
+
+.star-cool{
+
+    background:var(--color-star-cool);
+
+}
+
+.star-champagne{
+
+    background:var(--color-star-champagne);
+
+}
+
+
+/*============================================================
+    Sparkle Rays
+
+    Created dynamically by JavaScript.
+
+    They remain invisible until
+    a sparkle animation plays.
+=============================================================*/
+
+.star::before,
+.star::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/* Horizontal ray */
+
+.star::before{
+
+    width:0;
+
+    height:1px;
+
+    background:white;
+
+}
+
+
+/* Vertical ray */
+
+.star::after{
+
+    width:1px;
+
+    height:0;
+
+    background:white;
+
+}
+
+
+/*============================================================
+    Temporary Sparkle State
+
+    JavaScript simply adds:
+
+        .sparkling
+
+    then removes it.
+
+=============================================================*/
+
+.sparkling{
+
+    filter:
+
+        drop-shadow(0 0 5px rgba(255,255,255,.65))
+
+        drop-shadow(0 0 10px rgba(255,255,255,.35));
+
+}
+
+
+/* Horizontal ray expands */
+
+.sparkling::before{
+
+    width:12px;
+
+    opacity:1;
+
+}
+
+
+/* Vertical ray expands sparkling::after{
+
+    height:12px;
+
+    opacity:1;
+
+}
+
+
+/*============================================================
+    Large Stars
+
+    Very rare.
+
+    Adds slight glow.
+
+=============================================================*/
+
+.star-large{
+
+    filter:
+
+        drop-shadow(0 0 4px rgba(255,255,255,.25));
+
+}
+
+
+/*============================================================
+    Performance
+
+=============================================================*/
+
+#stars-far,
+#stars-mid,
+#stars-near{
+
+    contain:layout style paint;
+
+}
+
+/*============================================================
+Hero Stars
+============================================================*/
+
+.hero-star{
+
+    filter:drop-shadow(0 0 6px rgba(255,245,220,.35));
+
+    z-index:4;
+
+}
+
+
+/*============================================================
+Hero Sparkle Animation
+============================================================*/
+
+.sparkle{
+
+    animation:
+
+        heroSparkle .7s ease-out;
+
+}
+
+
+@keyframes heroSparkle{
+
+    0%{
+
+        transform:scale(1);
+
+        filter:brightness(1);
+
+    }
+
+    35%{
+
+        transform:scale(2);
+
+        filter:
+
+            brightness(2.4)
+
+            drop-shadow(0 0 12px white);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        filter:brightness(1);
+
+    }
+
+}
+
+/*============================================================
+    Shared Star Layer
+============================================================*/
+
+.stars-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}

@@ -1,0 +1,293 @@
+/*============================================================
+
+    Project Bloom
+    File: 09-responsive.css
+
+    Purpose
+    -------
+    Responsive design rules.
+
+    Philosophy
+    ----------
+    Preserve the emotion,
+    not just the layout.
+
+    Breakpoints
+    -----------
+    Mobile   : <= 600px
+    Tablet   : 601px - 1024px
+    Desktop  : >= 1025px
+
+=============================================================*/
+
+
+
+/*============================================================
+    TABLETS
+=============================================================*/
+
+@media (max-width:1024px){
+
+    /*----------------------------------------
+        Intro
+    ----------------------------------------*/
+
+    #intro{
+
+        padding-top:40vh;
+
+    }
+
+    #intro-text{
+
+        width:min(88%,700px);
+
+        font-size:clamp(2rem,5vw,3.4rem);
+
+        line-height:1.22;
+
+    }
+
+    #intro-sparkle{
+
+        margin-top:28px;
+
+    }
+
+    /*----------------------------------------
+        Bouquet
+
+        Slightly smaller.
+    ----------------------------------------*/
+
+    #bouquet{
+
+        transform:scale(.92);
+
+        transform-origin:center bottom;
+
+    }
+
+}
+
+
+
+/*============================================================
+    MOBILE
+=============================================================*/
+
+@media (max-width:600px){
+
+    /*----------------------------------------
+        Intro Position
+
+        Slightly higher to leave
+        room for the bouquet.
+    ----------------------------------------*/
+
+    #intro{
+
+        padding-top:34vh;
+
+        padding-inline:22px;
+
+    }
+
+    /*----------------------------------------
+        Intro Text
+    ----------------------------------------*/
+
+    #intro-text{
+
+        width:100%;
+
+        max-width:420px;
+
+        font-size:clamp(2rem,8vw,2.9rem);
+
+        line-height:1.15;
+
+        letter-spacing:.01em;
+
+    }
+
+    /*----------------------------------------
+        Sparkle
+    ----------------------------------------*/
+
+    #intro-sparkle{
+
+        width:16px;
+
+        height:16px;
+
+        margin-top:24px;
+
+    }
+
+    /*----------------------------------------
+        Bouquet
+
+        Mobile bouquet grows
+        a little narrower.
+    ----------------------------------------*/
+
+    #bouquet{
+
+        transform:
+
+            scale(.84)
+
+            translateY(3%);
+
+        transform-origin:center bottom;
+
+    }
+
+    /*----------------------------------------
+        Letter
+
+    ----------------------------------------*/
+
+    #letter{
+
+        padding:26px;
+
+    }
+
+}
+
+
+
+/*============================================================
+    SMALL PHONES
+
+    Older Androids
+    Small iPhones
+
+=============================================================*/
+
+@media (max-width:390px){
+
+    #intro{
+
+        padding-top:31vh;
+
+    }
+
+    #intro-text{
+
+        font-size:1.8rem;
+
+    }
+
+}
+
+
+
+/*============================================================
+    LARGE DESKTOPS
+
+=============================================================*/
+
+@media (min-width:1600px){
+
+    #intro-text{
+
+        max-width:980px;
+
+        font-size:4.8rem;
+
+    }
+
+}
+
+
+
+/*============================================================
+    ULTRA WIDE
+
+=============================================================*/
+
+@media (min-width:2200px){
+
+    #intro{
+
+        padding-top:40vh;
+
+    }
+
+}
+
+
+
+/*============================================================
+    LANDSCAPE PHONES
+
+=============================================================*/
+
+@media (max-height:600px) and (orientation:landscape){
+
+    #intro{
+
+        padding-top:22vh;
+
+    }
+
+    #intro-text{
+
+        font-size:2.3rem;
+
+    }
+
+    #bouquet{
+
+        transform:
+
+            scale(.72)
+
+            translateY(8%);
+
+    }
+
+}
+
+
+
+/*============================================================
+    Touch Devices
+
+    Remove hover-only behaviour.
+
+=============================================================*/
+
+@media (hover:none){
+
+    *{
+
+        -webkit-tap-highlight-color:transparent;
+
+    }
+
+}
+
+
+
+/*============================================================
+    Reduced Motion
+
+=============================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+    .float,
+
+    .glow,
+
+    .twinkle{
+
+        animation:none !important;
+
+    }
+
+}
