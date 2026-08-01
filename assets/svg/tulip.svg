@@ -1,0 +1,39 @@
+<svg class="fl fl-tulip" data-flower-type="tulip" viewBox="0 0 140 320" xmlns="http://www.w3.org/2000/svg">
+    <!--
+        Project Bloom — Tulip
+
+        Structure other files rely on:
+        · .fl-stem   — a single measurable path (JS reads its length to "draw" it on)
+        · .fl-leaf   — each wrapped in its own <g translate(...) rotate(...)>, path starts at local 0,0
+        · .fl-bloom  — wrapped in <g translate(...)>, scales from its own centre (fill-box)
+        · .fl-petal  — direct children of .fl-bloom that flowers.js fades/staggers in
+    -->
+    <g class="fl-plant">
+
+        <path class="fl-stem"
+              d="M70,317 C68,255 75,196 68,146 C64,113 70,93 70,76" />
+
+        <g class="fl-leaves">
+            <g class="fl-leaf" transform="translate(64,226) rotate(-16)">
+                <path d="M0,0 C-9,-10 -27,-14 -45,-6 C-32,4 -13,9 0,0 Z" />
+            </g>
+            <g class="fl-leaf" transform="translate(75,170) rotate(13)">
+                <path d="M0,0 C9,-10 27,-14 45,-6 C32,4 13,9 0,0 Z" />
+            </g>
+        </g>
+
+        <g class="fl-bloom" transform="translate(70,76)">
+            <g class="fl-petal" transform="rotate(-17)">
+                <path d="M-15,27 C-22,5 -17,-21 0,-34 C6,-22 8,-4 6,15 C3,23 -6,27 -15,27 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(17)">
+                <path d="M15,27 C22,5 17,-21 0,-34 C-6,-22 -8,-4 -6,15 C-3,23 6,27 15,27 Z" />
+            </g>
+            <g class="fl-petal">
+                <path d="M-13,28 C-19,6 -14,-22 0,-35 C14,-22 19,6 13,28 C7,33 -7,33 -13,28 Z" />
+            </g>
+            <ellipse class="fl-sheen" cx="-5" cy="-9" rx="6.5" ry="11" transform="rotate(-12)" />
+        </g>
+
+    </g>
+</svg>

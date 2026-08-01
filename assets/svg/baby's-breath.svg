@@ -1,0 +1,47 @@
+<svg class="fl fl-babysbreath" data-flower-type="babysBreath" viewBox="0 0 140 320" xmlns="http://www.w3.org/2000/svg">
+    <!-- Project Bloom — Baby's Breath. .fl-bloom holds thin static branches plus many tiny .fl-floret dots — the airiest, smallest-footprint flower in the arrangement. -->
+    <g class="fl-plant">
+
+        <path class="fl-stem"
+              d="M70,317 C70,262 71,208 70,155 C70,135 70,122 70,112" />
+
+        <g class="fl-leaves">
+            <g class="fl-leaf" transform="translate(67,270) rotate(-19)">
+                <path d="M0,0 C-5,-5 -13,-6 -21,-1 C-15,3 -6,5 0,0 Z" />
+            </g>
+            <g class="fl-leaf" transform="translate(73,242) rotate(17)">
+                <path d="M0,0 C5,-5 13,-6 21,-1 C15,3 6,5 0,0 Z" />
+            </g>
+        </g>
+
+        <g class="fl-bloom" transform="translate(70,112)">
+
+            <g class="fl-sprigs">
+                <path d="M0,0 L-18,-38" />
+                <path d="M0,0 L-9,-53" />
+                <path d="M0,0 L4,-59" />
+                <path d="M0,0 L17,-47" />
+                <path d="M0,0 L23,-27" />
+                <path d="M0,0 L11,-17" />
+                <path d="M0,0 L-5,-11" />
+                <path d="M0,0 L-15,-23" />
+                <path d="M-9,-53 L-2,-64" />
+                <path d="M17,-47 L25,-54" />
+            </g>
+
+            <circle class="fl-floret" cx="-18" cy="-38" r="2.6" />
+            <circle class="fl-floret" cx="-9"  cy="-53" r="2.3" />
+            <circle class="fl-floret" cx="4"   cy="-59" r="2.5" />
+            <circle class="fl-floret" cx="17"  cy="-47" r="2.6" />
+            <circle class="fl-floret" cx="23"  cy="-27" r="2.4" />
+            <circle class="fl-floret" cx="11"  cy="-17" r="2.2" />
+            <circle class="fl-floret" cx="-5"  cy="-11" r="2.3" />
+            <circle class="fl-floret" cx="-15" cy="-23" r="2.4" />
+            <circle class="fl-floret" cx="-2"  cy="-64" r="2.0" />
+            <circle class="fl-floret" cx="25"  cy="-54" r="2.0" />
+            <circle class="fl-floret" cx="0"   cy="-30" r="2.1" />
+
+        </g>
+
+    </g>
+</svg>

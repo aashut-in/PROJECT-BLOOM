@@ -1,0 +1,50 @@
+<svg class="fl fl-rose" data-flower-type="rose" viewBox="0 0 140 320" xmlns="http://www.w3.org/2000/svg">
+    <!-- Project Bloom — Rose. A ring of rounded outer petals with a tighter inner spiral drawn on top, for a layered rosette rather than a flat rosette silhouette. -->
+    <g class="fl-plant">
+
+        <path class="fl-stem"
+              d="M70,317 C69,268 73,222 70,180 C68,150 71,128 70,112" />
+
+        <g class="fl-leaves">
+            <g class="fl-leaf" transform="translate(65,240) rotate(-17)">
+                <path d="M0,0 C-7,-8 -20,-11 -33,-4 C-23,4 -9,7 0,0 Z" />
+            </g>
+            <g class="fl-leaf" transform="translate(75,195) rotate(14)">
+                <path d="M0,0 C7,-8 20,-11 33,-4 C23,4 9,7 0,0 Z" />
+            </g>
+        </g>
+
+        <g class="fl-bloom" transform="translate(70,110)">
+
+            <g class="fl-petal" transform="rotate(-70)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(-24)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(20)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(64)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(110)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+            <g class="fl-petal" transform="rotate(158)">
+                <path d="M-11,-2 C-14,-14 -8,-24 0,-26 C8,-24 14,-14 11,-2 C9,6 -9,6 -11,-2 Z" />
+            </g>
+
+            <ellipse class="fl-sheen" cx="-4" cy="-8" rx="5" ry="9" transform="rotate(-14)" />
+
+            <g class="fl-petal fl-petal--inner" transform="rotate(25)">
+                <path d="M-6,-1 C-7,-8 -3,-13 0,-14 C3,-13 7,-8 6,-1 C5,3 -5,3 -6,-1 Z" />
+            </g>
+            <g class="fl-petal fl-petal--inner" transform="rotate(-45)">
+                <path d="M-6,-1 C-7,-8 -3,-13 0,-14 C3,-13 7,-8 6,-1 C5,3 -5,3 -6,-1 Z" />
+            </g>
+
+        </g>
+
+    </g>
+</svg>
